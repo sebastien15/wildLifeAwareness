@@ -1,7 +1,7 @@
-import User from '../models/User';
+import Animal from '../models/Animal';
 
 class AnimalService{
-    static createUser(newAnimal) {
+    static createAnimal(newAnimal) {
         return Animal.create(newAnimal);
     }
     static retrieveAnimals(){

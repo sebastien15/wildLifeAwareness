@@ -19,7 +19,7 @@ class Animal extends Model{}
         },
         {
             sequelize,
-            modelName: 'User',
+            modelName: 'Animal',
         },
     );
     

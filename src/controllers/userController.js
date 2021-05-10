@@ -12,7 +12,7 @@ export default class User {
                 password: req.body.password
             }
             const newUser = await UserService.createUser(user);
-            util.setSuccess(200,'You have successfuly create a user', newUser);
+            util.setSuccess(201,'You have successfuly create a user', newUser);
             return util.send(res);
         }catch(error){
             util.setError(500,console.log(error.message));
@@ -44,7 +44,7 @@ export default class User {
         try {
             const {id} = req.params;
             const user = await UserService.deleteUser(id);
-            util.setSuccess(200, 'You have successfully deleted a user!',user);
+            util.setSuccess(201, 'You have successfully deleted a user!',user);
             util.send(res);
         } catch (error) {
             util.setError(500,console.log(error.message));
@@ -61,7 +61,7 @@ export default class User {
             const  { id } = req.params;
             const updateUser = await UserService.updateUserAt(user,{id:id});
 
-            util.setSuccess(200,'User updated successfully', updateUser);
+            util.setSuccess(201,'User updated successfully', updateUser);
             return util.send(res);
         } catch (error) {
             util.setError(500,console.log(error.message));
